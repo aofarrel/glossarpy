@@ -45,7 +45,7 @@ test:
 	flake8 --ignore E501,E231,E128 glossarpy/GlossTxt.py
 	flake8 --ignore E501,E231,E128 glossarpy/GlossEntry.py
 	flake8 --ignore E501,E231,E128 glossarpy/GreatGloss.py
-	#mypy glossarpy/*.py
+	mypy glossarpy/*.py
 	mypy --ignore-missing-imports examples/example_typical_usage.py
 	mypy --ignore-missing-imports examples/example_import_entries.py
 

@@ -27,7 +27,7 @@ Further reading: `<https://en.wikipedia.org/wiki/Felidae>`_
 
 Juice
 -----
-    A mysterious orange housecat, also known as Roofcat, native to theEast Side of Santa Cruz who successfully charmed at least four different householdsinto feeding him at the same time  
+    A mysterious orange housecat, also known as Roofcat, native to the East Side of Santa Cruz who successfully charmed at least four different households into feeding him at the same time  
 
 Further reading: `<https://roofcat.care>`_  
 
