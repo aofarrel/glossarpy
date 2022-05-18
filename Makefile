@@ -1,4 +1,4 @@
-. PHONY: all clean html reinstall reqs run test
+. PHONY: all clean html lint reinstall reqs run test
 
 all: # run `make reqs` once before running this
 	make clean
