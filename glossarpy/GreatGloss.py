@@ -1,9 +1,9 @@
 import datetime
-import GlossTxt
-import GlossEntry
+from . import GlossTxt
+from . import GlossEntry
 
 
-class GreatGloss(GlossTxt):
+class GreatGloss():
     '''Object for an entire glossary'''
     def __init__(self, title, outfile="", outtoc="", updated=datetime.date.today()):
         self.title: str = title

@@ -1,8 +1,8 @@
 import datetime
-import GlossTxt
+from . import GlossTxt
 
 
-class GlossEntry(GlossTxt):
+class GlossEntry():
     '''Object for an individual glossary entry'''
     def __init__(self, name, acronym_full="", definition="", furtherreading="", institute="",
             pronunciation="", seealso="", updated=datetime.date.today()):

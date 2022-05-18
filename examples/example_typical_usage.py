@@ -1,4 +1,4 @@
-from glossarpy import *
+from glossarpy.GreatGloss import *
 
 '''
 glossarpy typical use case example
@@ -16,18 +16,18 @@ internally known as GreatGloss. A GreatGloss is a list of GlossEntry objects.
 outfile = "examples/typical_usage_output.rst"  # name of the overall glossary's output file
 contents = "examples/typical_usage_toc.txt"  # name of the table of contents' output file
 
-CheezburgerGlossary = glossarpy.GreatGloss("Very Cool Animals")
+CheezburgerGlossary = GreatGloss("Very Cool Animals")
 CheezburgerGlossary.add_entries([
-	glossarpy.GlossEntry("Juice",
+	GlossEntry("Juice",
 		definition="""A mysterious orange housecat, also known as Roofcat, native to the
 		East Side of Santa Cruz who successfully charmed at least four different households
 		into feeding him at the same time""",
 		furtherreading="https://roofcat.care"),
-	glossarpy.GlossEntry("cat",
+	GlossEntry("cat",
 		definition="A digitigrade carnivorous animal in the Felidae family of mammals",
 		furtherreading="https://en.wikipedia.org/wiki/Felidae"),
-	glossarpy.GlossEntry("Roofcat",seealso="Juice"),
-	glossarpy.GlossEntry("tiger",
+	GlossEntry("Roofcat",seealso="Juice"),
+	GlossEntry("tiger",
 		definition="An orange-and-black striped [cat] native to Southeast Asia",
 		furtherreading="https://en.wikipedia.org/wiki/Tiger")
 	])
