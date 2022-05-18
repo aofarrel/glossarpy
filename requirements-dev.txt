@@ -1,3 +1,4 @@
 wheel
 setuptools
 flake8
+mypy

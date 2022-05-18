@@ -5,12 +5,15 @@ with open("README.md") as f:
 
 setup(
     name='glossarpy',
-    version='0.0.2',
+    version='0.0.3',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Ash O'Farrrell",
     author_email='aofarrel@ucsc.edu',
     packages=['glossarpy'],
+    include_package_data=True,
+    package_data={"glossarpy": ["*.md", "*.pyi"]},
+    zip_safe=False,  # required for mypy to find glossarpy.pyi... but doesn't seem to be working
     url='https://github.com/aofarrel/glossarpy.git',
     platforms=["MacOS X", "Posix"],
     classifiers=[

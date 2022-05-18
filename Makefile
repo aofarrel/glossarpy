@@ -43,4 +43,7 @@ run:
 
 test:
 	flake8 --ignore E501,E231,E128 glossarpy/glossarpy.py
+	mypy glossarpy/glossarpy.py
+	mypy --ignore-missing-imports examples/example_typical_usage.py
+	mypy --ignore-missing-imports examples/example_import_entries.py
 
