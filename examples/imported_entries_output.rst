@@ -17,7 +17,7 @@ canine
 
 Further reading: `<https://en.wikipedia.org/wiki/Canidae>`_  
 
-.. updated 2022-05-17  
+.. updated 2022-05-18  
 
 
 
@@ -29,7 +29,7 @@ wolf
 
 Further reading: `<https://en.wikipedia.org/wiki/Wolf>`_  
 
-.. updated 2022-05-17  
+.. updated 2022-05-18  
 
 
 

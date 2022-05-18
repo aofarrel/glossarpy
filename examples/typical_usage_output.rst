@@ -19,7 +19,7 @@ cat
 
 Further reading: `<https://en.wikipedia.org/wiki/Felidae>`_  
 
-.. updated 2022-05-17  
+.. updated 2022-05-18  
 
 
 
@@ -31,7 +31,7 @@ Juice
 
 Further reading: `<https://roofcat.care>`_  
 
-.. updated 2022-05-17  
+.. updated 2022-05-18  
 
 
 
@@ -41,7 +41,7 @@ Roofcat
 -------
 see also :ref:`dict Juice`  
 
-.. updated 2022-05-17  
+.. updated 2022-05-18  
 
 
 
@@ -53,7 +53,7 @@ tiger
 
 Further reading: `<https://en.wikipedia.org/wiki/Tiger>`_  
 
-.. updated 2022-05-17  
+.. updated 2022-05-18  
 
 
 

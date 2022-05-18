@@ -18,8 +18,8 @@ contents = "examples/typical_usage_toc.txt"  # name of the table of contents' ou
 CheezburgerGlossary = glossarpy.GreatGloss("Very Cool Animals")
 CheezburgerGlossary.add_entries([
 	glossarpy.GlossEntry("Juice",
-		definition="""A mysterious orange housecat, also known as Roofcat, native to the
-		East Side of Santa Cruz who successfully charmed at least four different households
+		definition="""A mysterious orange housecat, also known as Roofcat, native to the 
+		East Side of Santa Cruz who successfully charmed at least four different households 
 		into feeding him at the same time""",
 		furtherreading="https://roofcat.care"),
 	glossarpy.GlossEntry("cat",
