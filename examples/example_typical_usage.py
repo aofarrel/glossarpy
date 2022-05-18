@@ -34,5 +34,5 @@ CheezburgerGlossary.add_entries([
 	])
 
 CheezburgerGlossary.sort_entries()  # put entries in alphabetical order
-CheezburgerGlossary.write_toc(contents)
+CheezburgerGlossary.write_toc(contents, "txt")
 CheezburgerGlossary.write_glossary(outfile)

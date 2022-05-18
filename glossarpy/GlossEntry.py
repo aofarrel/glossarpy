@@ -29,7 +29,7 @@ class GlossEntry(GlossTxt.GlossTxt):
         self.seealso: str = seealso
         self.updated: datetime = updated
 
-    def return_name(self, nospaces=False):
+    def return_name(self, nospaces:bool = False):
         '''Returns name of the entry'''
         if not nospaces:
             return self.name
@@ -48,14 +48,14 @@ class GlossEntry(GlossTxt.GlossTxt):
         entry_title.extend(self.underline_text(self.name))
         return "".join(entry_title)
 
-    def text_pronunciation(self, format="txt"):
+    def text_pronunciation(self, format:str = "txt"):
         '''Return pronunciation'''
         if format == "txt":
             return f"[pronounced {self.pronunciation}]\n"
         elif format == "rst":
             return f"pronounced {self.pronunciation}  \n\n"
 
-    def text_acronym(self, format="txt"):
+    def text_acronym(self, format:str = "txt"):
         '''Return acronym's full form, in italics if RST. We need an extra newline in RST to prevent
         the acronym from being considered a header relative to the definition.'''
         if format == "txt":
@@ -64,7 +64,7 @@ class GlossEntry(GlossTxt.GlossTxt):
             words = self.acronym_full.split()
             return f"*abbreviation for* {self.rst_process_brackets(words)}  \n\n"
 
-    def text_definition(self, format="txt"):
+    def text_definition(self, format:str = "txt"):
         '''Return the definition of the entry.
         If RST, calls a function that turns bracketed [text] into internal links.
         Limitations: RST does not support letters coming after a link without a puncuation mark.'''
@@ -75,7 +75,7 @@ class GlossEntry(GlossTxt.GlossTxt):
             processed_with_links = self.rst_process_brackets(words)
             return f"    {processed_with_links}  \n\n"
 
-    def text_institute(self, format="txt"):
+    def text_institute(self, format:str = "txt"):
         '''Return a caveat about how this term may mean something else outside the context of
         self.institute. In RST form this becomes a note block.'''
         if format == "txt":
@@ -83,7 +83,7 @@ class GlossEntry(GlossTxt.GlossTxt):
         elif format == "rst":
             return f".. note:: This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.  \n"
 
-    def text_seealso(self, format="txt"):
+    def text_seealso(self, format:str = "txt"):
         '''Returns the entry's seealso information, which links to another entry.
         There is a supposedly simplier way to do this with sphinx.ext.autosectionlabel, via:
             see also :ref:`{self.seealso}`
@@ -97,7 +97,7 @@ class GlossEntry(GlossTxt.GlossTxt):
             else:  # not strictly necessary to render, but without this warning will be thrown
                 return f"\nsee also :ref:`dict {self.seealso}`  \n"
 
-    def text_furtherreading(self, format="txt"):
+    def text_furtherreading(self, format:str = "txt"):
         '''Returns the entry's further reading section, which is a single URL.
         In RST, if there is a see also, we need an extra newline in further reading.'''
         if format == "txt":
@@ -108,7 +108,7 @@ class GlossEntry(GlossTxt.GlossTxt):
             else:
                 return f"\nFurther reading: {self.rst_url(self.furtherreading)}  \n"
 
-    def text_updated(self, format="txt"):
+    def text_updated(self, format:str = "txt"):
         '''Return when entry was last updated (visibly if txt, as a comment if RST)
         Caveat: This isn't very helpful if you keep all of your entries in the same file and
         parse all of them at the same time.'''

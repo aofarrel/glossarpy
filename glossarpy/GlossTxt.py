@@ -4,11 +4,11 @@ import re
 class GlossTxt:
     '''Handles RST-specific output'''
 
-    def underline_text(self, text:str, underlinechar="-"):
+    def underline_text(self, text:str, underlinechar:str = "-"):
         '''Underlines text, used to create a valid rst header or make txt prettier'''
         return [f"{text}\n", underlinechar * len(text) + "\n"]
 
-    def rst_url(self, url):
+    def rst_url(self, url:str):
         '''Generate an RST URL for further reading'''
         return f"`<{url}>`_"
 
