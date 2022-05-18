@@ -1,9 +1,0 @@
-README.md
-setup.py
-glossarpy/ __init__.py
-glossarpy/glossarpy.py
-glossarpy.egg-info/PKG-INFO
-glossarpy.egg-info/SOURCES.txt
-glossarpy.egg-info/dependency_links.txt
-glossarpy.egg-info/not-zip-safe
-glossarpy.egg-info/top_level.txt
