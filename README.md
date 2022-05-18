@@ -47,9 +47,9 @@
 
 ### Compiling RST output in Sphinx 
  This repo's makefile includes commands to show you what a glossary made glossarpy looks like inside a readthedocs template of Sphinx, by leveraging Dockstore's documentation repo. If you want to be able to do that, pull [the Dockstore documentation repo](https://github.com/dockstore/dockstore-documentation), and have it on the same level as this repo, i.e.
-"""
+```
  .
  ├── dockstore-documentation/
  └── glossarpy/
-"""
+```
 Then, run `make reqs`. Once you have run `make reqs` once, you can run `make all` or `make html` to your heart's content (until you leave your venv of course).
