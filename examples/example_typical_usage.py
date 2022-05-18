@@ -1,4 +1,5 @@
-from glossarpy import glossarpy
+from glossarpy import *
+
 '''
 glossarpy typical use case example
 
