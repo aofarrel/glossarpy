@@ -1,3 +1,3 @@
-from glossarpy import GlossEntry
+from glossarpy.GlossEntry import GlossEntry
 
 foo = GlossEntry("bar")
