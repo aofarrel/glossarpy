@@ -3,7 +3,7 @@ from . import GlossTxt
 from . import GlossEntry
 
 
-class GreatGloss():
+class GreatGloss(GlossTxt.GlossTxt):
     '''Object for an entire glossary'''
     def __init__(self, title, outfile="", outtoc="", updated=datetime.date.today()):
         self.title: str = title

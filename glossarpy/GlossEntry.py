@@ -2,7 +2,7 @@ import datetime
 from . import GlossTxt
 
 
-class GlossEntry():
+class GlossEntry(GlossTxt.GlossTxt):
     '''Object for an individual glossary entry'''
     def __init__(self, name, acronym_full="", definition="", furtherreading="", institute="",
             pronunciation="", seealso="", updated=datetime.date.today()):
