@@ -1,11 +1,16 @@
-. PHONY: all clean html lint reinstall reqs run test
+. PHONY: all build clean html lint reinstall-local reqs run test
 
 all: # run `make reqs` once before running this
 	make clean
-	make reinstall
+	make reinstall-local
 	make lint
 	make test
 	make html
+
+build:
+	# for uploading to pypi
+	python3 -m pip install --upgrade build
+	python3 -m build
 
 clean:
 	rm -f examples/typical_usage_output.rst
@@ -33,7 +38,7 @@ lint:
 	mypy --ignore-missing-imports examples/example_typical_usage.py
 	mypy --ignore-missing-imports examples/example_import_entries.py
 
-reinstall:
+reinstall-local:
 	pip3 install -r requirements-dev.txt
 	python3 -m pip install types-setuptools # this one is just to stop mypy from complaining
 	pip3 uninstall --yes glossarpy

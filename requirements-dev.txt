@@ -1,4 +1,6 @@
+build
 wheel
+twine
 setuptools
 flake8
 mypy
