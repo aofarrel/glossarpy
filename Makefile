@@ -1,10 +1,10 @@
-. PHONY: all clean html reinstall reqs run test
+. PHONY: all clean html lint reinstall reqs run test
 
 all: # run `make reqs` once before running this
 	make clean
 	make reinstall
+	make lint
 	make test
-	make run
 	make html
 
 clean:
@@ -23,6 +23,16 @@ html:
 	python -mwebbrowser file:///$$(pwd)/_build/html/typical_usage_output.html; \
 	python -mwebbrowser file:///$$(pwd)/_build/html/imported_entries_output.html
 
+lint:
+	flake8 --ignore E501,E231,E128 glossarpy/GlossTxt.py
+	flake8 --ignore E501,E231,E128 glossarpy/GlossEntry.py
+	flake8 --ignore E501,E231,E128 glossarpy/GreatGloss.py
+	mypy glossarpy/GlossTxt.py
+	#mypy glossarpy/GlossEntry.py  # mypy struggles with the import due to how this is packaged
+	#mypy glossarpy/GreatGloss.py  # mypy struggles with the import due to how this is packaged
+	mypy --ignore-missing-imports examples/example_typical_usage.py
+	mypy --ignore-missing-imports examples/example_import_entries.py
+
 reinstall:
 	pip3 install -r requirements-dev.txt
 	python3 -m pip install types-setuptools # this one is just to stop mypy from complaining
@@ -37,13 +47,7 @@ reqs:
 	echo "attrs==21.4.0\n" >> requirements-dev.txt
 	pip3 install -r requirements-dev.txt
 
-run:
+test:
 	python3 examples/example_typical_usage.py
 	python3 examples/example_import_entries.py
-
-test:
-	flake8 --ignore E501,E231,E128 glossarpy/glossarpy.py
-	mypy glossarpy/glossarpy.py
-	mypy --ignore-missing-imports examples/example_typical_usage.py
-	mypy --ignore-missing-imports examples/example_import_entries.py
 

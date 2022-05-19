@@ -1,5 +1,6 @@
 from example_standalone_entries import *
-from glossarpy import glossarpy
+from glossarpy.GlossEntry import GlossEntry
+from glossarpy.GreatGloss import GreatGloss
 import gc  # yep, that's garbage collector!
 
 """
@@ -14,9 +15,9 @@ the actual code that builds them, it is an option.
 outfile = "examples/imported_entries_output.rst"
 
 # this seems like a bad idea, but it does work!
-AwooGlossary = glossarpy.GreatGloss("They're Good Dogs, Brent")
+AwooGlossary = GreatGloss("They're Good Dogs, Brent")
 for glossary_object in gc.get_objects():
-    if isinstance(glossary_object, glossarpy.GlossEntry):
+    if isinstance(glossary_object, GlossEntry):
         AwooGlossary.add_entry(glossary_object)
 AwooGlossary.sort_entries()
 AwooGlossary.write_glossary(outfile)
