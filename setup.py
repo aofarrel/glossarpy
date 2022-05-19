@@ -5,7 +5,8 @@ with open("README.md") as f:
 
 setup(
     name='glossarpy',
-    version='0.0.3',
+    version='0.0.5',
+    description="Create RST and plaintext glossaries easily",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Ash O'Farrrell",
@@ -13,9 +14,10 @@ setup(
     packages=['glossarpy'],
     include_package_data=True,
     package_data={"glossarpy": ["*.md", "*.pyi"]},
-    zip_safe=False,  # required for mypy to find glossarpy.pyi... but doesn't seem to be working
+    zip_safe=False,
     url='https://github.com/aofarrel/glossarpy.git',
     platforms=["MacOS X", "Posix"],
+    license="Apache 2.0",
     classifiers=[
         "Programming Language :: Python :: 3.7",
         "Topic :: Software Development :: Documentation",
