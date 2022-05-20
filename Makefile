@@ -8,7 +8,8 @@ all: # run `make reqs` once before running this
 	make html
 
 build:
-	# for uploading to pypi
+	# prepare for uploading to pypi
+	make clean
 	python3 -m pip install --upgrade build
 	python3 -m build
 
@@ -21,6 +22,8 @@ clean:
 	rm -rf *.egg-info/
 
 html:
+	# assumes dockstore-documentation exists on same level as this repo, see readme
+	# be careful not to commit these test files to dockstore-documentation!
 	cp examples/typical_usage_output.rst ../dockstore-documentation/docs/typical_usage_output.rst
 	cp examples/imported_entries_output.rst ../dockstore-documentation/docs/imported_entries_output.rst
 	cd ../dockstore-documentation/docs/; \

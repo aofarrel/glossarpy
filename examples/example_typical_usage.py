@@ -11,6 +11,8 @@ what entries have been added/removed in source control
 
 In this example, CheezburgerGlossary is the name of the overall glossary object,
 internally known as GreatGloss. A GreatGloss is a list of GlossEntry objects.
+
+See readme for info on sourcefile.
 '''
 
 
@@ -35,4 +37,4 @@ CheezburgerGlossary.add_entries([
 
 CheezburgerGlossary.sort_entries()  # put entries in alphabetical order
 CheezburgerGlossary.write_toc(contents, "txt")
-CheezburgerGlossary.write_glossary(outfile)
+CheezburgerGlossary.write_glossary(outfile, sourcefile=__file__)
