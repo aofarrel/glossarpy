@@ -10,7 +10,7 @@ all GlossEntry objects into a GreatGloss object. This isn't
 recommended, but if you want to keep your entries separate from
 the actual code that builds them, it is an option.
 
-See example_standalone_entries.py for more on sourcefile.
+See readme for info on sourcefile.
 """
 
 

@@ -15,7 +15,7 @@ class GlossEntry(GlossTxt.GlossTxt):
         seealso - related but not equivalent entries, such as CLI being related to Dockstore CLI.
         updated - when the entry was last updated
 
-        When outputting to RST, acronym_full, seealso, & definition will replace text in [brackets]
+        When outputting to RST, acronym_full and definition will replace text in [brackets]
         with a working internal hyperlink to another entry. For example, if self.definition="I use
         [Seven Bridges]", then the RST out will be "I use :ref:`dict Seven Bridges`" (although the
         link will not be clickable if there is no entry for Seven Bridges)

@@ -12,12 +12,7 @@ what entries have been added/removed in source control
 In this example, CheezburgerGlossary is the name of the overall glossary object,
 internally known as GreatGloss. A GreatGloss is a list of GlossEntry objects.
 
-If we want either of the outputs to say what file it was created from, we can
-use the Python built-in __file__, which will return the name of the Python file
-that is currently being executed. There ae some caveats to this, such as the
-fact this variable is not set when running in an interactive interpreter, so feel
-free to replace __file__ with a string instead. If you would like to only print
-the basename, this can be done by importing os, then using os.path.basename(__file__)
+See readme for info on sourcefile.
 '''
 
 
