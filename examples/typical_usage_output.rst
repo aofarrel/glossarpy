@@ -18,8 +18,6 @@ cat
 
 Further reading: `<https://en.wikipedia.org/wiki/Felidae>`_  
 
-.. updated 2022-05-18  
-
 
 
 .. _dict Juice:
@@ -30,8 +28,6 @@ Juice
 
 Further reading: `<https://roofcat.care>`_  
 
-.. updated 2022-05-18  
-
 
 
 .. _dict Roofcat:
@@ -39,8 +35,6 @@ Further reading: `<https://roofcat.care>`_
 Roofcat
 -------
 see also :ref:`dict Juice`  
-
-.. updated 2022-05-18  
 
 
 
@@ -51,8 +45,6 @@ tiger
     An orange-and-black striped :ref:`dict cat` native to Southeast Asia  
 
 Further reading: `<https://en.wikipedia.org/wiki/Tiger>`_  
-
-.. updated 2022-05-18  
 
 
 

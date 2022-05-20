@@ -16,8 +16,6 @@ canine
 
 Further reading: `<https://en.wikipedia.org/wiki/Canidae>`_  
 
-.. updated 2022-05-18  
-
 
 
 .. _dict wolf:
@@ -27,8 +25,6 @@ wolf
     A large :ref:`dict canine` found across the Northern Hemisphere known to form packs  
 
 Further reading: `<https://en.wikipedia.org/wiki/Wolf>`_  
-
-.. updated 2022-05-18  
 
 
 
