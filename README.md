@@ -1,5 +1,5 @@
 # glossarpy
- Generate plaintext or reStructuredText (RST) glossaries/dictionaries for documentation with Python. When output is set to RST, glossarpy will automatically give each entry an internal link, allowing for easy cross-referencing within and outside the glossary it generates. Links to external URLs are also supported.
+ Generate plaintext or Sphinx-flavored reStructuredText (RST) glossaries/dictionaries for documentation with Python. When output is set to RST, glossarpy will automatically give each entry an internal link, allowing for easy cross-referencing within and outside the glossary it generates. Links to external URLs are also supported.
 
 ## Usage
  `pip install glossarpy`
@@ -15,13 +15,13 @@
  To declare a GlossEntry, all you need is their name: `WDL = GlossEntry("WDL")` will create a GlossEntry object with a `name` field of `"WDL"`.
 
  Here's a full list of fields that a GlossEntry can contain (all are type string except `updated` which is type datetime from the datetime module):
-    * **name** - entry's name; spaces are supported, do not use [brackets]
-    * **acronym_full** - if acronym, what is the full name. if blank, assumed to not be an acronym.
-    * **further_reading** - URL to a webpage, usually an "official" one associated with the term
-    * **institute** - which institution or context is the phrase associated with?
-    * **pronunciation** - pronunciation (ex: wdl - "widdle")
-    * **seealso** - links to another GlossEntry by that GlossEntry's name field
-    * **updated** - when the entry was last updated
+ * **name** - entry's name; spaces are supported, do not use [brackets]
+ * **acronym_full** - if acronym, what is the full name. if blank, assumed to not be an acronym.
+ * **further_reading** - URL to a webpage, usually an "official" one associated with the term
+ * **institute** - which institution or context is the phrase associated with?
+ * **pronunciation** - pronunciation (ex: wdl - "widdle")
+ * **seealso** - links to another GlossEntry by that GlossEntry's name field
+ * **updated** - when the entry was last updated
 
 ## Useful GlossEntry methods
  Generally, you will want to use GreatGloss methods instead.
@@ -43,7 +43,7 @@
  * add_entry() - Add a single GlossEntry to GreatGloss
  * add_entries() - Add a list of GlossEntry objects to GreatGloss
  * sort_entries(ignorecase:bool = True) - Sort all GlossEntry objects added by add_entry() or add_entries() alphabetically by their name field
-   * ignorecase: set to True (default) to treat capital and lowercase letters as equivalent (ex: `anaconda Anaconda bat zebra`), set to False to use default Python sorting (ex: `anaconda bat zebra Anaconda`)
+   * ignorecase: set to True (default) to treat capital and lowercase letters as equivalent (ex: `anaconda Anacondas bat zebra`), set to False to use default Python sorting (ex: `anaconda bat zebra Anacondas`)
  * write_glossary(self, outfile:str = "", format:str = "rst", skipTOC:bool = False, skipSource:bool = False, sourcefile:str = None)
    * Write a glossary to the file described in outfile; will raise a RuntimeError if neither this nor GreatGloss' object's outtoc field are defined
    * format: `rst` for RST output, `txt` for plaintext
