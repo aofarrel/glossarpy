@@ -117,7 +117,7 @@ class GlossEntry(GlossTxt.GlossTxt):
         elif format == "rst":
             return self.updated.strftime("\n.. updated %Y-%m-%d  \n\n\n\n")
 
-    def generate_plaintext(self):
+    def generate_plaintext(self, timestamp:bool = False):
         '''Generate plaintext output of this entry'''
         plaintext = []
         plaintext.append(self.text_entry_title())
@@ -133,10 +133,13 @@ class GlossEntry(GlossTxt.GlossTxt):
             plaintext.append(self.text_seealso())
         if self.furtherreading != "":
             plaintext.append(self.text_furtherreading())
-        plaintext.append(self.text_updated())
+        if timestamp:
+            plaintext.append(self.text_updated())
+        else:
+            plaintext.append("\n\n\n")
         return "".join(plaintext)
 
-    def generate_RST(self):
+    def generate_RST(self, timestamp:bool = False):
         '''Generate RST output of this entry'''
         rst = []
         rst.append(self.rst_bookmark())
@@ -153,5 +156,9 @@ class GlossEntry(GlossTxt.GlossTxt):
             rst.append(self.text_seealso(format="rst"))
         if self.furtherreading != "":
             rst.append(self.text_furtherreading(format="rst"))
-        rst.append(self.text_updated(format="rst"))
+        if timestamp:
+            rst.append(self.text_updated(format="rst"))
+        else:
+            # minimum of one newline needed to keep rst bookmarks working
+            rst.append("\n\n\n")
         return "".join(rst)
