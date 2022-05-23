@@ -92,9 +92,12 @@ class GlossEntry(GlossTxt.GlossTxt):
         if format == "txt":
             return f"see also {self.seealso}\n"
         elif format == "rst":
+
+            # if there is an institute, it's a good idea to include an extra newline. it's
+            # not strictly necessary to render properly, but without it, a warning will be thrown
             if self.institute == "":
                 return f"see also :ref:`dict {self.seealso}`  \n"
-            else:  # not strictly necessary to render, but without this warning will be thrown
+            else:
                 return f"\nsee also :ref:`dict {self.seealso}`  \n"
 
     def text_furtherreading(self, format:str = "txt"):
@@ -103,10 +106,27 @@ class GlossEntry(GlossTxt.GlossTxt):
         if format == "txt":
             return f"Further reading: {self.furtherreading}\n"
         elif format == "rst":
+            furtherreading = []
+
+            # start with extra newline if necessary
             if self.seealso == "" and self.institute == "":
-                return f"Further reading: {self.rst_url(self.furtherreading)}  \n"
+                pass
             else:
-                return f"\nFurther reading: {self.rst_url(self.furtherreading)}  \n"
+                furtherreading.append("\n")
+
+            furtherreading.append("Further reading: ")
+
+            # check if link is internal or external
+            if (self.furtherreading.startswith("https://")
+                    or self.furtherreading.startswith("http://")
+                    or self.furtherreading.startswith("www")):
+                # assume external link
+                furtherreading.append(f"{self.rst_url(self.furtherreading)}  \n")
+            else:
+                # assume internal documentation link
+                furtherreading.append(f"{self.rst_url(self.furtherreading, internal=True)}  \n")
+
+            return "".join(furtherreading)
 
     def text_updated(self, format:str = "txt"):
         '''Return when entry was last updated (visibly if txt, as a comment if RST)

@@ -18,6 +18,7 @@
  * **name** - entry's name; spaces are supported, do not use [brackets]
  * **acronym_full** - if acronym, what is the full name. if blank, assumed to not be an acronym.
  * **further_reading** - URL to a webpage, usually an "official" one associated with the term
+    * if an internal link to another documentation page, do not include .html at the end
  * **institute** - which institution or context is the phrase associated with?
  * **pronunciation** - pronunciation (ex: wdl - "widdle")
  * **seealso** - links to another GlossEntry by that GlossEntry's name field
@@ -42,7 +43,8 @@
 ## Useful GreatGloss methods
  * add_entry() - Add a single GlossEntry to GreatGloss
  * add_entries() - Add a list of GlossEntry objects to GreatGloss
- * sort_entries(ignorecase:bool = True) - Sort all GlossEntry objects added by add_entry() or add_entries() alphabetically by their name field
+ * sort_entries(ignorecase:bool = True)
+   * Sort all GlossEntry objects added by add_entry() or add_entries() alphabetically by their name field
    * ignorecase: set to True (default) to treat capital and lowercase letters as equivalent (ex: `anaconda Anacondas bat zebra`), set to False to use default Python sorting (ex: `anaconda bat zebra Anacondas`)
  * write_glossary(self, outfile:str = "", format:str = "rst", skipTOC:bool = False, skipSource:bool = False, sourcefile:str = None)
    * Write a glossary to the file described in outfile; will raise a RuntimeError if neither this nor GreatGloss' object's outtoc field are defined

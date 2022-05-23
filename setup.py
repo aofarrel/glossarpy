@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name='glossarpy',
-    version='0.0.8',
+    version='0.0.9',
     description="Create RST and plaintext glossaries easily",
     long_description=long_description,
     long_description_content_type="text/markdown",

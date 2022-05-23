@@ -12,6 +12,7 @@ build:
 	make clean
 	python3 -m pip install --upgrade build
 	python3 -m build
+	# when ready, twine upload dist/*
 
 clean:
 	rm -f examples/typical_usage_output.rst
@@ -23,18 +24,24 @@ clean:
 
 html:
 	# assumes dockstore-documentation exists on same level as this repo, see readme
+	#
+	# 1. copy the rst files to dockstore-documentation repo
 	# be careful not to commit these test files to dockstore-documentation!
 	cp examples/typical_usage_output.rst ../dockstore-documentation/docs/typical_usage_output.rst
 	cp examples/imported_entries_output.rst ../dockstore-documentation/docs/imported_entries_output.rst
+
+	# 2. run dockstore-documention's version of `make html`
+	# this will also include the processing of dictionary.rst if it is present in dockstore-documentation
 	cd ../dockstore-documentation/docs/; \
 	make html; \
 	python -mwebbrowser file:///$$(pwd)/_build/html/typical_usage_output.html; \
-	python -mwebbrowser file:///$$(pwd)/_build/html/imported_entries_output.html
+	python -mwebbrowser file:///$$(pwd)/_build/html/imported_entries_output.html; \
+	python -mwebbrowser file:///$$(pwd)/_build/html/dictionary.html
 
 lint:
-	flake8 --ignore E501,E231,E128 glossarpy/GlossTxt.py
-	flake8 --ignore E501,E231,E128 glossarpy/GlossEntry.py
-	flake8 --ignore E501,E231,E128 glossarpy/GreatGloss.py
+	flake8 --ignore E501,E231,E128,W503 glossarpy/GlossTxt.py
+	flake8 --ignore E501,E231,E128,W503 glossarpy/GlossEntry.py
+	flake8 --ignore E501,E231,E128,W503 glossarpy/GreatGloss.py
 	mypy glossarpy/GlossTxt.py
 	#mypy glossarpy/GlossEntry.py  # mypy struggles with the import due to how this is packaged
 	#mypy glossarpy/GreatGloss.py  # mypy struggles with the import due to how this is packaged

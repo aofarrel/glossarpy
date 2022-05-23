@@ -8,9 +8,14 @@ class GlossTxt:
         '''Underlines text, used to create a valid rst header or make txt prettier'''
         return [f"{text}\n", underlinechar * len(text) + "\n"]
 
-    def rst_url(self, url:str):
-        '''Generate an RST URL for further reading'''
-        return f"`<{url}>`_"
+    def rst_url(self, url:str, internal:bool = False):
+        '''Generate an RST URL for further reading.
+        If internal, assume this is an internal URL within Sphinx documentation
+        Otherwise, assume this is a standard URL to an external webpage'''
+        if internal:
+            return f":doc:`{url} <{url}>`"
+        else:
+            return f"`<{url}>`_"
 
     def rst_bookmark(self):
         '''Generates an RST bookmark for the entry'''
