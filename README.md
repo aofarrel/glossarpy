@@ -1,8 +1,12 @@
 # glossarpy
+  ![PyPI version](https://img.shields.io/pypi/v/glossarpy) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/glossarpy) ![PyPI - Format](https://img.shields.io/pypi/format/glossarpy)  
+
  Generate plaintext or Sphinx-flavored reStructuredText (RST) glossaries/dictionaries for documentation with Python. When output is set to RST, glossarpy will automatically give each entry an internal link, allowing for easy cross-referencing within and outside the glossary it generates. Links to external URLs are also supported.
 
 ## Usage
  `pip install glossarpy`
+
+ There are no further requirements for users.
 
  Once glossarpy is installed in your Python environment, you can import it like any other module. See `examples/` for some typical use cases.
 
@@ -33,12 +37,9 @@
  For either of these methods, you can set `timestamp=True` to have a timestamp get added to the output. That timestamp will be formatted as a comment (ie, will not show up when rendered as HTML in most forms of Sphinx, but will be in the RST file itself) if you are using `generate_rst(timestamp=True)`
 
 ### Linking one GlossEntry to another GlossEntry
- The `definition` and `acronym_full` arguments can reference other GlossEntry objects by their `name` field. To do so, encapsulate the entry title you which to reference with brackets, such as `WDL = GlossEntry("WDL", acronym_full="[Workflow Description Language]")` or `WDL = GlossEntry("WDL", definition="A shorthand for [Workflow Description Language]")`. When outputting to RST, this will create an internal hyperlink to a GlossEntry that has `name="Workflow Description Language"` assuming such a GlossEntry exists. 
+ The `definition`, `acronym_full`, and `seealso` arguments can reference other GlossEntry objects by their `name` field. To do so, encapsulate the entry title you which to reference with brackets, such as `WDL = GlossEntry("WDL", acronym_full="[Workflow Description Language]")` or `WDL = GlossEntry("WDL", definition="A shorthand for [Workflow Description Language]")`. When outputting to RST, this will create an internal hyperlink to a GlossEntry that has `name="Workflow Description Language"` assuming such a GlossEntry exists. 
 
  Do not put any alphanumeric characters immediately before or after either bracket.
- 
- `acronym_full` will not link to another entry if brackets are not included, e.g. `GCP = GlossEntry("GCP", acronym_full="Google Cloud Platform")` would not link a GlossEntry 
- `seealso` can also reference another GlossEntry object by name, but it does not need brackets, because it assumes only links to other entries will be put in there. i.e. `GCP = GlossEntry("GCP", seealso="AWS")`.
 
 ## Useful GreatGloss methods
  * add_entry() - Add a single GlossEntry to GreatGloss

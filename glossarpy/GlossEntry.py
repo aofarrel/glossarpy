@@ -53,7 +53,7 @@ class GlossEntry(GlossTxt.GlossTxt):
         if format == "txt":
             return f"[pronounced {self.pronunciation}]\n"
         elif format == "rst":
-            return f"pronounced {self.pronunciation}  \n\n"
+            return f"[pronounced {self.pronunciation}]  \n\n"
 
     def text_acronym(self, format:str = "txt"):
         '''Return acronym's full form, in italics if RST. We need an extra newline in RST to prevent
@@ -92,13 +92,15 @@ class GlossEntry(GlossTxt.GlossTxt):
         if format == "txt":
             return f"see also {self.seealso}\n"
         elif format == "rst":
+            words = self.seealso.split()
+            processed_with_links = self.rst_process_brackets(words)
 
             # if there is an institute, it's a good idea to include an extra newline. it's
             # not strictly necessary to render properly, but without it, a warning will be thrown
             if self.institute == "":
-                return f"see also :ref:`dict {self.seealso}`  \n"
+                return f"see also {processed_with_links}  \n"
             else:
-                return f"\nsee also :ref:`dict {self.seealso}`  \n"
+                return f"\nsee also {processed_with_links}  \n"
 
     def text_furtherreading(self, format:str = "txt"):
         '''Returns the entry's further reading section, which is a single URL.

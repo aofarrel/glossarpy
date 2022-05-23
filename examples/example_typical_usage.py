@@ -29,7 +29,7 @@ CheezburgerGlossary.add_entries([
 	GlossEntry("cat",
 		definition="A digitigrade carnivorous animal in the Felidae family of mammals",
 		furtherreading="https://en.wikipedia.org/wiki/Felidae"),
-	GlossEntry("Roofcat",seealso="Juice"),
+	GlossEntry("Roofcat",seealso="[Juice], [cat]"),
 	GlossEntry("tiger",
 		definition="An orange-and-black striped [cat] native to Southeast Asia",
 		furtherreading="https://en.wikipedia.org/wiki/Tiger")

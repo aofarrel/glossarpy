@@ -34,7 +34,7 @@ Further reading: `<https://roofcat.care>`_
 
 Roofcat
 -------
-see also :ref:`dict Juice`  
+see also :ref:`dict Juice`, :ref:`dict cat`  
 
 
 
