@@ -55,7 +55,7 @@ class GreatGloss(GlossTxt.GlossTxt):
         if columns<=0 && format=="rst": use Sphinx built in local TOC instead of hlist'''
         TOC = []
         if not skipSource:
-            TOC.append(self.add_source(sourcefile))
+            TOC.append(self.add_source(format=format, sourcefile=sourcefile))
         if format == "rst" or format == "RST":
             if columns <= 0:
                 TOC.append(".. contents:: Table of Contents \n\t:local:\n\n")
